@@ -2,6 +2,6 @@ var app = angular.module('campaignManager', ['ngRoute', 'ngMaterial','ngMessages
 app.config(function($routeProvider){
   $routeProvider
       .when('/', {
-          templateUrl:"../../client/campaigns/views/campaign.html",
+          templateUrl:"/campaigns/views/campaign.html",
           controller:'campaignCtrl'});
 });
