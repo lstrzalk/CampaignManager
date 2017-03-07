@@ -1,12 +1,8 @@
-var express = require("express");
-var path = require("path");
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var mongoose = require("./config/mongoose.js");
+var express = require("./config/express.js");
+
+var db = mongoose();
 var app = express();
-
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.use(express.static('client'));
-
-app.route('/').get(function(req,res){
-	res.render(path.join(__dirname,'server','views','index'));
-});
 app.listen(3000);
+module.exports = app;
